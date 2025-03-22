@@ -81,11 +81,12 @@ public class UsuarioDaojpa implements InterfaceDao<loginUsuario> {
     }
 
     @Override
-    public List<loginUsuario> filtrarPorNome(String nome) throws Exception {
+    public List<loginUsuario> filtrarPorNomeESenha(String nome, String senha) throws Exception {
         EntityManager em = ConnFactory.getEntityManager();
 
-        Query query = em.createNamedQuery("loginUsuario.filtrarPorNome");
+        Query query = em.createNamedQuery("loginUsuario.filtrarPorNomeESenha");
         query.setParameter("nome", nome);
+        query.setParameter("senha", senha);
         List<loginUsuario> resultado = query.getResultList();
         return resultado;
     }

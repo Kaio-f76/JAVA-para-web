@@ -1,38 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Login</title>
-</head>
-<body>
-    <div class="main-login">
-        <div class="left-login">
-            <h1>Faça login <br> caso ainda não tenha, faça um cadastro :)</h1>
-            <img class="left-login-image" src="img/financial-data-animate.svg" alt="animacaoFinancas">
+<html>
+    <head>
+        <title>Gestão financeira</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <center>
+                <br>
+                <br>
+                <br>
+                <hr>
+                <h3><a href="login.jsp?acao=telaLogin">login</a></h3>
+                <h3><a href="cadastro.jsp?acao=telaCadastro">cadastro</a></h3>
+                <h3><a href="exibirResultados.jsp?acao=telaResultados">Resultados</a></h3>
+                <hr>
+            </center>
         </div>
-        <div class="right-login">
-            <div class="card-login">
-                <h1>LOGIN</h1>
-                <div class="textfield">
-                    <label for="usuario">Usuário</label>
-                    <input type="text" name="usuario" placeholder="Usuário">
-                </div>
-                <div class="textfield">
-                    <label for="senha">Senha</label>
-                    <div class="password-container">
-                        <input id="senha" type="password" name="senha" placeholder="Senha">
-                        <img id="toggle-password" src="img/eye-closed.png" alt="Mostrar senha" class="eye-icon">
-                    </div>
-                </div>
-                <button class="btn btn-login">Login</button>
-                <button onclick="window.location.href='cadastro.jsp?acao=telaCadastro'" class="btn btn-realizar-cadastro ">Não possuo um cadastro!</button>
-                <a href="cadastro.jsp?acao=telaCadastro"></a>
-            </div>  
-        </div>
-    </div>
-    <!---->
-    <script src="js/app.js"></script>
-</body>
+    </body>
 </html>

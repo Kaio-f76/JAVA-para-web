@@ -11,9 +11,16 @@ import javax.persistence.NamedQuery;
  * @author kaio
  */
 
+/*
 @NamedQuery(
         name="loginUsuario.filtrarPorNome", 
         query="SELECT c FROM loginUsuario c WHERE c.nome like CONCAT('%',:nome,'%')")
+*/
+
+@NamedQuery(
+        name = "loginUsuario.filtrarPorNomeESenha",
+        query = "SELECT c FROM loginUsuario c WHERE c.nome LIKE CONCAT('%', :nome, '%') AND c.senha = :senha"
+)
 
 
 @Entity
@@ -29,7 +36,7 @@ public class loginUsuario {
     public loginUsuario() {
     }
 
-    public loginUsuario(String nome, String senha, String email) {
+    public loginUsuario(String nome, String email, String senha ) {
         this.nome = nome;
         this.senha = senha;
         this.email = email;

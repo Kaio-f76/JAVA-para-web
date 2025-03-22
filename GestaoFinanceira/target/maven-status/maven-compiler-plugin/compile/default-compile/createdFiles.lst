@@ -1,3 +1,5 @@
+controller/LoginUsuarioSrv.class
+controller/validarEmail.class
 controller/CadastroUsuarioSrv.class
 model/loginUsuario.class
 model/dao/UsuarioDaojpa.class

@@ -23,6 +23,10 @@ public class CadastroUsuarioSrv extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         try {
+            
+            //RequestDispatcher index = null;
+            //index = request.getRequestDispatcher("index.html");
+            //index.forward(request, response);
 
             String acao = request.getParameter("DadosTelaCadastro");
 
@@ -31,11 +35,10 @@ public class CadastroUsuarioSrv extends HttpServlet {
             String senhaUsuario = request.getParameter("senha");
             String confirmarSenha = request.getParameter("confirmarsenha");
 
-            
             InterfaceDao dao = DaoFactory.novoLoginDAO();
             loginUsuario lu = null;
             RequestDispatcher rd = null;
-            
+
             System.out.println("\n" + "Antes - Dados coletados em cadastro.jsp " + "\n" + "nome: " + nomeUsuario + "\n"
                     + "email: " + emailUsuario + "\n" + "senha: " + senhaUsuario + "\n"
                     + "confirmar senha: " + confirmarSenha + "\n"
@@ -45,41 +48,91 @@ public class CadastroUsuarioSrv extends HttpServlet {
             //emailUsuario = "jose@gmail.com";
             //senhaUsuario = "1234";
             //confirmarSenha = "1234";
-            System.out.println(acao);  
+            System.out.println(acao);
 
-          
-            
             switch (acao) {
 
                 case "telaCadastro":
 
-                    //rd = request.getRequestDispatcher("cadastro.jsp");
-                    //rd.forward(request, response);
+                    
+                    if (nomeUsuario == null || nomeUsuario.trim().isEmpty()) {
+                        request.setAttribute("erroCadastro", "O nome de usuário não pode ser vazio.");
+                        request.setAttribute("nomeUsuario", nomeUsuario); 
+                        request.setAttribute("emailUsuario", emailUsuario);
+                        request.setAttribute("senhaUsuario", senhaUsuario);
+                        request.setAttribute("confirmarSenha", confirmarSenha);
+                        rd = request.getRequestDispatcher("cadastro.jsp");
+                        rd.forward(request, response);
+                        return; 
+                    }
+
+                    if (emailUsuario == null || emailUsuario.trim().isEmpty()
+                        || !validarEmail.validarEmail(emailUsuario)) {
+                        request.setAttribute("erroCadastro", "O email informado é inválido.");
+                        request.setAttribute("nomeUsuario", nomeUsuario);
+                        request.setAttribute("emailUsuario", emailUsuario); 
+                        request.setAttribute("senhaUsuario", senhaUsuario);
+                        request.setAttribute("confirmarSenha", confirmarSenha);
+                        rd = request.getRequestDispatcher("cadastro.jsp");
+                        rd.forward(request, response);
+                        return;
+                    }
+
+                    if (senhaUsuario == null || senhaUsuario.trim().isEmpty()) {
+                        request.setAttribute("erroCadastro", "A senha não pode ser vazia.");
+                        request.setAttribute("nomeUsuario", nomeUsuario);
+                        request.setAttribute("emailUsuario", emailUsuario);
+                        request.setAttribute("senhaUsuario", senhaUsuario);
+                        request.setAttribute("confirmarSenha", confirmarSenha);
+                        rd = request.getRequestDispatcher("cadastro.jsp");
+                        rd.forward(request, response);
+                        return;
+                    }
+
+                    if (confirmarSenha == null || confirmarSenha.trim().isEmpty()) {
+                        request.setAttribute("erroCadastro", "A confirmação de senha não pode ser vazia.");
+                        request.setAttribute("nomeUsuario", nomeUsuario);
+                        request.setAttribute("emailUsuario", emailUsuario);
+                        request.setAttribute("senhaUsuario", senhaUsuario);
+                        request.setAttribute("confirmarSenha", confirmarSenha);
+                        rd = request.getRequestDispatcher("cadastro.jsp");
+                        rd.forward(request, response);
+                        return;
+                    }
 
                     
-                    System.out.println("\n" + "Depois - Dados coletados em cadastro.jsp " + "\n" + "nome: " + nomeUsuario + "\n"
-                    + "email: " + emailUsuario + "\n" + "senha " + senhaUsuario + "\n"
-                    + "confirmar senha: " + confirmarSenha + "\n"
-                    );
-                    
+                    if (!senhaUsuario.equals(confirmarSenha)) {
+                        request.setAttribute("erroCadastro", "As senhas não coincidem.");
+                        request.setAttribute("nomeUsuario", nomeUsuario);
+                        request.setAttribute("emailUsuario", emailUsuario);
+                        request.setAttribute("senhaUsuario", senhaUsuario);
+                        request.setAttribute("confirmarSenha", confirmarSenha);
+                        rd = request.getRequestDispatcher("cadastro.jsp");
+                        rd.forward(request, response);
+                        return;
+                    }
+
                     
                     lu = new loginUsuario(nomeUsuario, emailUsuario, senhaUsuario);
-                    //System.out.println("O que foi enviado atraves do construtor lu em CadastroUsuarioSrv.java: " + "\n"
-                    //+ lu.toString());
-
                     try {
-                        dao.incluir(lu);
+                        dao.incluir(lu); 
                     } catch (Exception ex) {
                         System.out.println("Erro na inclusão do usuário -> emitido da class CadastroUsuarioSrv.java !"
                                 + ex.getMessage());
                         Logger.getLogger(CadastroUsuarioSrv.class.getName()).log(Level.SEVERE, null, ex);
+                        request.setAttribute("erroCadastro", "Erro ao cadastrar o usuário.");
+                        rd = request.getRequestDispatcher("cadastro.jsp");
+                        rd.forward(request, response);
+                        return;
                     }
 
+                   
                     rd = request.getRequestDispatcher("index.html");
                     rd.forward(request, response);
 
-
+              
                     break;
+                       
 
             }
 

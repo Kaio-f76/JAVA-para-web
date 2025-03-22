@@ -4,9 +4,17 @@
         <servlet-name>CadastroUsuarioSrv</servlet-name>
         <servlet-class>controller.CadastroUsuarioSrv</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginUsuarioSrv</servlet-name>
+        <servlet-class>controller.LoginUsuarioSrv</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastroUsuarioSrv</servlet-name>
         <url-pattern>/CadastroUsuarioSrv</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginUsuarioSrv</servlet-name>
+        <url-pattern>/LoginUsuarioSrv</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
