@@ -1,8 +1,0 @@
-controller/LoginUsuarioSrv.class
-controller/validarEmail.class
-controller/CadastroUsuarioSrv.class
-model/loginUsuario.class
-model/dao/UsuarioDaojpa.class
-model/dao/ConnFactory.class
-model/dao/DaoFactory.class
-model/dao/InterfaceDao.class
