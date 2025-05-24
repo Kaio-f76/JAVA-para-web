@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Sprint - finanças pessoais</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/iconeDaPagina.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/inicio.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>Sprint</h1>
+            <p class="subtitulo">Controle suas finanças, alcance seus sonhos!</p>
+        </div>
+        <div class="header-right">
+            <button class="menu-btn">☰</button>
+            <div class="menu-conteudo">
+                <a href="login.jsp?acao=telaLogin">Login</a>
+                <a href="cadastro.jsp?acao=telaCadastro">Cadastro</a>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="content-container">
+            <section class="content-links">
+                <h2 class="fade-in">Bem-vindo à sprint</h2>
+                <p>Organize suas finanças de forma prática e eficiente.</p>
+                <div class="image-wrapper">
+                    <img src="img/primeiro.jpg" alt="Ilustração Financeira" class="finance-image">
+                </div>
+            </section>
+            <section class="extra-section">
+                <h3>Planeje seu futuro</h3>
+                <p>Com nossas ferramentas, fica fácil garantir a gestão das suas finanças.</p>
+                <div class="image-wrapper">
+                    <img src="img/second.jpg" alt="Ilustração Planejamento" class="finance-image">
+                </div>
+            </section>
+        </div>
+        <section class="testimonials">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="testimonial">
+                <p>"Com sprint, consegui economizar e Viajar para a Coreia do Sul!"</p>
+                <span>- Endril Gabriel</span>
+            </div>
+            <div class="testimonial">
+                <p>"A ferramenta é intuitiva e mudou minha relação com o dinheiro annnn"</p>
+                <span>- Pedro Gomes </span>
+            </div>
+        </section>
+        <div class="features">
+            <div class="feature">
+                <img src="img/result.png" alt="Resultados" class="feature-icon">
+                <p>Resultados financeiros rápidos e precisos</p>
+            </div>
+            <div class="feature">
+                <img src="img/plan.png" alt="Planejamento" class="feature-icon">
+                <p>Ferramentas de planejamento eficiente</p>
+            </div>
+            <div class="feature">
+                <img src="img/safety.png" alt="Segurança" class="feature-icon">
+                <p>Dados 100% seguros</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <hr>
+        <p class="footer-text">&copy; 2025 sprint - finanças pessoais. Todos os direitos reservados.</p>
+    </footer>
+    
+    <!-- Scripts de Interatividade -->
+    <script>
+        // Menu toggle (aparece/desaparece)
+        document.querySelector(".menu-btn").addEventListener("click", function() {
+            document.querySelector(".menu-conteudo").classList.toggle("show-menu");
+        });
+
+        // Fechar o menu se clicar fora dele
+        window.addEventListener("click", function(event) {
+            if (!event.target.closest('.header-right')) {
+                document.querySelector(".menu-conteudo").classList.remove("show-menu");
+            }
+        });
+    </script>
+</body>
+</html>
