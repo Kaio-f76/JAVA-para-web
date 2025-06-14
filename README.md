@@ -14,6 +14,18 @@ Sistema CRUD para Web desenvolvido com foco em tecnologias robustas para aplica�
 - **HTML/CSS**: utilizados para construção das interfaces visuais, garantindo usabilidade e design responsivo.
 
 ---
+✔️ Ferramentas e Ambiente
+
+    Java – OpenJDK 21
+
+    Maven – Gerenciador de dependências e build
+
+    Msql – Banco de dados relacional
+
+    Tomcat - servidor web que implementa as especificações Java Servlet, JavaServer Pages (JSP) 
+    
+    IDE – NetBeans
+---
 
 ## 🖼️ Telas do Sistema
 
