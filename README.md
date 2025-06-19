@@ -29,15 +29,46 @@ Sistema CRUD para Web desenvolvido com foco em tecnologias robustas para aplica�
 
 ## 🖼️ Telas do Sistema
 
-| Tela                         | Descrição                                         | Imagem                                  |
-|------------------------------|-------------------------------------------------|-----------------------------------------|
-| Tela Inicial                 | Tela principal de boas-vindas ao sistema.        | ![inicial](assets/inicial.png)          |
-| Tela de Login               | Tela para autenticação do usuário.                | ![login](assets/login.png)               |
-| Tela de Cadastro de Usuário | Formulário para cadastro de novos usuários.      | ![CadastroUsuario](assets/CadastroUsuario.png) |
-| Tela de Controle Financeiro | Exibe dados financeiros para controle do usuário.| ![DadosFinanceirosExibir](assets/DadosFinanceirosExibir.png) |
-| Tela de Registro de Mês     | Interface para registrar informações mensais.    | ![RegistrarMes](assets/RegistrarMes.png)|
-| Tela de Edição do Mês       | Tela para editar os dados registrados do mês.    | ![EditarCadastroMes](assets/EditarCadastroMes.png) |
-| Tela de Edição do Usuário   | Tela para editar dados do usuário.                | ![EditarCadastroUsuario](assets/EditarCadastroUsuario.png) |
+### 🏠 Tela Inicial
+![inicial](assets/inicial.png)  
+Tela principal de boas-vindas ao sistema.
+
+---
+
+### 🔐 Tela de Login
+![login](assets/login.png)  
+Tela para autenticação do usuário.
+
+---
+
+### 🧾 Tela de Cadastro de Usuário
+![CadastroUsuario](assets/CadastroUsuario.png)  
+Formulário para cadastro de novos usuários.
+
+---
+
+### 💰 Tela de Controle Financeiro
+![DadosFinanceirosExibir](assets/DadosFinanceirosExibir.png)  
+Exibe dados financeiros para controle do usuário.
+
+---
+
+### 📅 Tela de Registro de Mês
+![RegistrarMes](assets/RegistrarMes.png)  
+Interface para registrar informações mensais.
+
+---
+
+### ✏️ Tela de Edição do Mês
+![EditarCadastroMes](assets/EditarCadastroMes.png)  
+Tela para editar os dados registrados do mês.
+
+---
+
+### 👤 Tela de Edição do Usuário
+![EditarCadastroUsuario](assets/EditarCadastroUsuario.png)  
+Tela para editar dados do usuário.
+
 
 ---
 
